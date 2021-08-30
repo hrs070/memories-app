@@ -6,8 +6,8 @@ export const memoriesContext = createContext();
 export default function Context({ children }) {
 
     return (
-        <memoriesContext.provider>
+        <memoriesContext.Provider>
             {children}
-        </memoriesContext.provider>
+        </memoriesContext.Provider>
     )
 }

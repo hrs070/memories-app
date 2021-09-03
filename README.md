@@ -2,9 +2,9 @@
 
 Clone repository
 
-Inside client folder, run `npm start` to start react server.
-
 Install nodemon `npm i nodemon -g`.
+
+Inside client folder, run `npm start` to start react server.
 
 Inside server folder, run `npm start` to start node server with nodemon.
 

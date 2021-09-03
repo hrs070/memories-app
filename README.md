@@ -1,6 +1,9 @@
 # memories-app
 
-clone repository
-inside client run `npm start` to start react server.
-install nodemon
-inside server run `npm start` to start node server with nodemon.
+Clone repository
+
+Inside client run `npm start` to start react server.
+
+Install nodemon.
+
+Inside server run `npm start` to start node server with nodemon.

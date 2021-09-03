@@ -16,5 +16,5 @@ Inside client folder, run `npm start` to start react server.
 Inside server folder, run `npm start` to start node server with nodemon.
 
 
-Server runs on **localhost:5000**. In case of hosting the app online or if the server runs on anyother port; 
+Server runs on **localhost:5000**. In case of hosting the app online or if the server runs on any other port; 
 goto **client/src/api/api.js** and change the **baseURL**.

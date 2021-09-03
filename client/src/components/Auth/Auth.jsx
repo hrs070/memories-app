@@ -49,8 +49,9 @@ export default function Auth() {
         }
     }
 
-    function googleFailure() {
+    function googleFailure(error) {
         console.log('Google Sign In failed');
+        console.log(error);
     }
 
     return (

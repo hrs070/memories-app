@@ -4,24 +4,32 @@ import LockOutlineIcon from '@material-ui/icons/LockOutlined';
 import Input from './Input.jsx';
 import useStyles from './styles.js';
 
+import { signUp, signIn } from '../../context/actions/authActions.js';
 import { useDispatch } from 'react-redux';
 import GoogleLogin from 'react-google-login';
 import { useHistory } from 'react-router-dom';
 
+const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' }
 
 export default function Auth() {
     const classes = useStyles();
 
     const [showPassword, setShowPassword] = useState(false);
     const [isSignUp, setIsSignUp] = useState(false);
+    const [formData, setFormData] = useState(initialState);
     const history = useHistory();
     const dispatch = useDispatch();
 
     function handleSubmit(e) {
         e.preventDefault();
+        if (isSignUp) {
+            dispatch(signUp(formData, history))
+        } else {
+            dispatch(signIn(formData, history))
+        }
     }
-    function handleChange() {
-
+    function handleChange(e) {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     }
     function handleShowPassword() {
         setShowPassword((prev) => !prev);
@@ -39,8 +47,8 @@ export default function Auth() {
         } catch (error) {
             console.log(error);
         }
-
     }
+
     function googleFailure() {
         console.log('Google Sign In failed');
     }
@@ -75,9 +83,9 @@ export default function Auth() {
                         )} onSuccess={googleSucces} onFailure={googleFailure} cookiePolicy="single_host_origin"
                     />
 
-                    <Grid item>
+                    <Grid item >
                         <Button onClick={switchMode} fullWidth variant="contained">
-                            {isSignUp ? "Already have an account ? Sign In" : "Don't have an acoount ? Sign Up"}
+                            {isSignUp ? "Already have an account ? Sign In" : "Don't have an account ? Sign Up"}
                         </Button>
                     </Grid>
                 </form>

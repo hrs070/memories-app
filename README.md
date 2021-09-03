@@ -2,7 +2,7 @@
 
 Clone repository
 
-Install nodemon `npm i nodemon -g`.
+Install nodemon `npm i nodemon -g`
 
 On the server side:
 
